@@ -38,8 +38,16 @@ npm run build
 Before you start, add the .env file
 
 ```sh
-PORT=YOUR_PORT
+PORT=5000
 DB_URL=YOUR_DB_URL
+JWT_ACCESS_SECRET=jwt-secret-key
+JWT_REFRESH_SECRET=jwt-refresh-secret-key
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT=587
+SMTP_USER=YOUR_SMTP_USER_LOGIN
+SMTP_PASSWORD=YOUR_EMAIL_PASSWORD
+API_URL=http://localhost:5000
+CLIENT_URL=http://localhost:3000
 etc...
 ```
 
