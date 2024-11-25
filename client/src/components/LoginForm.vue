@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useAuthStore } from '@/stores/auth';
-
 
 const email = ref<string|null>(null);
 const password = ref<string|null>(null);
-const store = useAuthStore();
 
+const props = defineProps<{
+  textButton?: string
+}>();
+
+const emit = defineEmits<{
+  (e: 'click', payload: { email: string|null; password: string|null }): void;
+}>();
+
+function submitForm() {
+  emit('click', { email: email.value, password: password.value });
+}
 </script>
 
 <template>
-  <div class="">
+  <div>
     <input
         v-model="email"
         type="email"
@@ -21,15 +29,8 @@ const store = useAuthStore();
         type="password"
         placeholder="Пароль"
     />
-    <button
-        @click="store.login(email, password)"
-    >
-      Логин
-    </button>
-    <button
-        @click="store.registration(email, password)"
-    >
-      Регистрация
+    <button @click="submitForm">
+      {{ props.textButton }}
     </button>
   </div>
 </template>
