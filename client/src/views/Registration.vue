@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import PageLayout from '@/layout/PageLayout.vue';
+
 </script>
 
 <template>
-  <PageLayout />
+  <h1>Registration</h1>
 </template>
 
 <style scoped>
